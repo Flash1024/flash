@@ -1,0 +1,326 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<!--==========Head Section Starts here===========-->
+{% block title %} Home {% endblock title %}
+<!--==========Head Section Ends here===========-->
+
+
+{% block body %}
+  <!-- ======= Hero Section ======= -->
+  <section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="hero-container" data-aos="fade-in">
+      <h1>My Site</h1>
+      <p>We're <span class="typed" data-typed-items="Entrepreneurs, Developers, Designers"></span></p>
+    </div>
+  </section><!-- End Hero -->
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-4" data-aos="fade-right">
+            <img src="{% static 'mysite/assets/img/profile.jpg' %}" class="img-fluid" alt="">
+          </div>
+          <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+            <h3>UI/UX Designer &amp; Web Developer.</h3>
+            <p class="font-italic">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+              magna aliqua.
+            </p>
+            <div class="row">
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="icofont-rounded-right"></i> <strong>Birthday:</strong> 1 May 1995</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Website:</strong> www.example.com</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Phone:</strong> +123 456 7890</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>City:</strong> City : New York, USA</li>
+                </ul>
+              </div>
+              <div class="col-lg-6">
+                <ul>
+                  <li><i class="icofont-rounded-right"></i> <strong>Age:</strong> 30</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Degree:</strong> Master</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>PhEmailone:</strong> email@example.com</li>
+                  <li><i class="icofont-rounded-right"></i> <strong>Freelance:</strong> Available</li>
+                </ul>
+              </div>
+            </div>
+            <p>
+              Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis.
+              Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+        
+    <!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+        <section id="services" class="services section-bg">
+          <div class="container">
+    
+            <div class="section-title">
+              <h2>Services</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Collapsible Group Item #1
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <p>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                </p>
+              </div>
+            
+    
+            <div class="row">
+            {% for s in serv %}
+              <div class="col-lg-4 col-md-6 icon-box" data-aos="fade-up">
+                <h4 class="title col-sm"><a data-toggle="collapse" data-target="#{{s}}" aria-expanded="false"
+                  href="#{{s}}" >{{s.service_name}}</a></h4>
+                  <div class="container">
+                    <p id="{{s}}" class="collapse">{{s.service_desc}}</p>
+                  </div>
+              </div>
+              {% endfor %}
+            </div>
+          </div>
+        </section>
+        <!-- End Services Section -->
+
+        <!-- ======= Portfolio Section ======= -->
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Portfolio</h2>
+          <p>You can visit through below mentioned Projects that we have done till now.</p>
+        </div>
+
+        <div class="row" data-aos="fade-up">
+          <div class="col-lg-12 d-flex justify-content-center">
+            <ul id="portfolio-flters">
+              <li data-filter="*" class="filter-active">All</li>
+              <li data-filter=".filter-app">App</li>
+              <li data-filter=".filter-web">Web</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="row portfolio-container" data-aos="fade-out" data-aos-delay="100">
+          {% for p in port %}
+          <div class="col-lg-4 col-md-6 portfolio-item filter-{{p.project_type}}">
+            <div class="portfolio-wrap">
+              <img src="{{p.project_thumbnail.url}}" class="img-fluid img-resize" alt=" ">
+            <div class="portfolio-links">
+                <a href="{{p.project_link}}">{{p.project_name}}</a>
+            </div>
+            </div>
+          </div>
+          {% endfor %}
+        </div>
+      </div>
+    </section>
+    <!-- End Portfolio Section -->
+
+    <!-- ======= Testimonials Section ======= -->
+    <section id="testimonials" class="testimonials section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Testimonials</h2>
+          <p>What our clients want to say</p>
+        </div>
+        
+        
+        <div class="owl-carousel testimonials-carousel">
+          {% for r in revw %}
+          <div class="testimonial-item" data-aos="fade-up">
+            <p>
+              <i class="bx bxs-quote-alt-left quote-icon-left"></i>
+              {{r.review}}
+              <i class="bx bxs-quote-alt-right quote-icon-right"></i>
+            </p>
+            <img src="{{r.image.url}}" class="testimonial-img" alt="">
+            <h3>{{r.person_name}}</h3>
+            <h4>{{r.jobpost}}</h4>
+          </div>
+          {% endfor %}
+        </div>
+        
+
+      </div>
+    </section>
+    <!-- End Testimonials Section -->
+
+        <!-- ======= Review Section ======= -->
+        <section id="review" class="review">
+          <div class="container">
+    
+            <div class="section-title">
+              <h2>Rate & Review</h2>
+              <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+            </div>
+
+            <div class="col-md-8 col-md-offset-2 d-flex align-items-stretch">
+              <form id="review-form" action="home.html" method="POST" onsubmit="home.html" role="form" class="review-form">
+                
+                {% csrf_token %}
+          
+                  <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Your Proffesion</label>
+                    <input type="text" name="jobpost" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                    <div class="validate"></div>
+                  </div>
+                                   
+                  <div class="form-group">
+                    <label for="name">Review</label>
+                    <textarea class="form-control" name="review", id="review" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                    <div class="validate"></div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="name">Upload Your Image</label>
+                      <div class="custom-file">
+                        <input type="file" name="files[]" id="image" multiple class="custom-file-input form-control">
+                          <label class="custom-file-label" for="customFile">Choose Photo</label>
+                      </div>
+                  </div>
+  
+                  <div class="text-center">
+                    <button type="submit" name="sendButton">Send Review</button>
+                  </div>
+                    <script>
+                      function submitForm() {
+                        var frm = document.getElementsById('review-form');
+                        frm.submit(); // Submit the form
+                        frm.reset();  // Reset all form data
+                          return false; // Prevent page refresh
+                            }
+                    </script>
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+    
+        <!-- End Review Section -->
+    
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact section-bg">
+      <div class="container">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+        </div>
+
+        <div class="row" data-aos="fade-in">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="icofont-google-map"></i>
+                <h4>Location:</h4>
+                <p>Somewhere in World</p>
+              </div>
+
+              <div class="email">
+                <i class="icofont-envelope"></i>
+                <h4>Email:</h4>
+                <p>welcome@oursite.com</p>
+              </div>
+
+              <div class="phone">
+                <i class="icofont-phone"></i>
+                <h4>Call:</h4>
+                <p>+91 7600 298 287</p>
+              </div>
+
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3777126.836658803!2d69.07490698739754!3d22.40641593570401!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3959051f5f0ef795%3A0x861bd887ed54522e!2sGujarat!5e0!3m2!1sen!2sin!4v1591849636705!5m2!1sen!2sin" frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen></iframe>  
+            </div>
+
+          </div>
+
+          <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
+            <form id="contact-form" action="home.html" method="POST" onsubmit="home.html" role="form" class="php-email-form">
+              
+              {% csrf_token %}
+              
+              <div class="form-row">
+ 
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                  <div class="validate"></div>
+                </div>
+
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" data-rule="email" data-msg="Please enter a valid email" />
+                  <div class="validate"></div>
+                </div>
+              
+              </div>
+                
+                <div class="form-group">
+                  <label for="name">Subject</label>
+                  <input type="text" class="form-control" name="subject" id="subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                  <div class="validate"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="name">Message</label>
+                  <textarea class="form-control" name="desc", id="desc" rows="10" data-rule="required" data-msg="Please write something for us"></textarea>
+                  <div class="validate"></div>
+                </div>
+                
+                <div class="mb-3">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+                </div>
+
+                <div class="text-center"><button type="submit" name="sendButton">Send Message</button>
+                </div>
+                <script>
+                  function submitForm() {
+                    var frm = document.getElementsById('contact-form');
+                    frm.submit(); // Submit the form
+                    frm.reset();  // Reset all form data
+                      return false; // Prevent page refresh
+                        }
+                </script>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section><!-- End Contact Section -->
+
+  </main><!-- End #main -->
+    
+{% endblock body %}
