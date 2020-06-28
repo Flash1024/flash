@@ -24,9 +24,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '+ma8ww^rl$iu1*@41)fv_=mt06y^bx0a6za)*pm*mzy)5v)c#e'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1:8000", "localhost:8000", "127.0.0.1"]
 
 
 # Application definition
@@ -120,7 +120,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, "static"), ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 #Manage Media
 MEDIA_URL = '/media/'
@@ -132,9 +132,13 @@ MEDIA_ROOT = os.path.join(BASE_DIR, "media")
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = "balarsmith123@gmail.com"
-EMAIL_HOST_PASSWORD = '5m1thb4l4r'
+EMAIL_HOST_PASSWORD = '*****'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 #EMAIL_USE_SSL = False
 
 
+try:
+    from .local_settings import *
+except ImportError:
+    pass

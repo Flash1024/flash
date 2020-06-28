@@ -18,17 +18,10 @@ class Review(models.Model):
     person_name = models.CharField(max_length=120, null=True, blank=True)
     jobpost = models.CharField(max_length=120, null=True, blank=True)
     review = models.TextField(max_length=250, null=True)
-    image = models.ImageField(upload_to='review/images', default="")
+    image = models.FileField(upload_to='review/images', default="")
 
     def __str__(self):
             return self.person_name
-
-class Service(models.Model):
-    service_name = models.CharField(max_length=120, null=True, blank=True)
-    service_desc = models.TextField(max_length=250, null=True)
-    
-    def __str__(self):
-            return self.service_name
 
 class Portfolio(models.Model):
     project_name = models.CharField(max_length=120, null=True, blank=True)
