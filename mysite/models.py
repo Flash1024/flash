@@ -4,6 +4,13 @@ PROJ_TYPE = (
     ("app", "App"),
 )
 
+class About(models.Model):
+    p1 = models.TextField(max_length=1000, null=True)
+    p2 = models.TextField(max_length=1000, null=True)
+    p3 = models.TextField(max_length=1000, null=True)
+    ab_image = models.FileField(upload_to='about/images', default="")
+    
+
 class Contact(models.Model):
     name = models.CharField(max_length=40, null=True, blank=True)
     email = models.EmailField(max_length=50, null=True, blank=True)

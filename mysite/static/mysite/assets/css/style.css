@@ -72,7 +72,7 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 325px;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
@@ -298,6 +298,8 @@ section {
 }
 
 .section-bg {
+  margin-left: -300px;
+  padding-left: 300px;
   background: #1e1b23;
 }
 
@@ -1016,7 +1018,7 @@ section {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 300px;
+  width: 321px;
   z-index: 9999;
   background: #ffffff2e;
 }
