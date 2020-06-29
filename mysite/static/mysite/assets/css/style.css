@@ -358,6 +358,7 @@ section {
 --------------------------------------------------------------*/
 
 .services .title {
+  cursor: pointer;
   margin-left: 80px;
   font-weight: 700;
   margin-top: 15px;
