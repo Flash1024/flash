@@ -72,12 +72,12 @@ h1, h2, h3, h4, h5, h6 {
   top: 0;
   left: 0;
   bottom: 0;
-  width: 325px;
+  width: 300px;
   transition: all ease-in-out 0.5s;
   z-index: 9997;
   transition: all 0.5s;
   padding: 0 15px;
-  background: #23232361;
+  background: #0c0b0bcc;
   overflow-y: auto;
 }
 
@@ -85,7 +85,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 15px auto;
   display: block;
   width: 120px;
-  border: 8px solid #17171759;
+  border: 8px solid #48454559;
 }
 
 #header .profile h1 {
@@ -298,8 +298,6 @@ section {
 }
 
 .section-bg {
-  margin-left: -300px;
-  padding-left: 300px;
   background: #1e1b23;
 }
 
@@ -359,7 +357,6 @@ section {
 
 .services .title {
   cursor: pointer;
-  margin-left: 80px;
   font-weight: 700;
   margin-top: 15px;
   font-size: 20px;
@@ -375,7 +372,7 @@ section {
 }
 
 .services .card-body {
-  margin-left: 100px;
+  margin-left: 10px;
   -ms-flex: 1 1 auto;
   flex: 1 1 auto;
   min-height: 1px;
@@ -390,15 +387,19 @@ section {
   border-bottom: 1px solid #bdbdbd20;
 }
 
-.services .card-header ul i {
+.services .content ul {
+  list-style: none;
+  padding: 0;
+}
+
+.services .content ul i {
   text-shadow: 0 0 3px #000;
   font-size: 20px;
   padding-right: 2px;
   color: #ab3333;
 }
 
-.services .card-header ul li {
-  padding: 100%;
+.services .content ul li {
   font-size: large;
   padding-bottom: 10px;
 }
@@ -725,7 +726,7 @@ section {
 
 .contact .info h4 {
   text-shadow: 0 0 3px #000;
-  padding: 0 0 0 60px;  
+  padding: 0 0 0 60px;
   font-size: 22px;
   font-weight: 600;
   margin-bottom: 5px;
@@ -1019,7 +1020,7 @@ section {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 321px;
+  width: 300px;
   z-index: 9999;
   background: #ffffff2e;
 }

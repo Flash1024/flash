@@ -10,7 +10,6 @@ class About(models.Model):
     p3 = models.TextField(max_length=1000, null=True)
     ab_image = models.FileField(upload_to='about/images', default="")
     
-
 class Contact(models.Model):
     name = models.CharField(max_length=40, null=True, blank=True)
     email = models.EmailField(max_length=50, null=True, blank=True)
@@ -20,7 +19,7 @@ class Contact(models.Model):
 
     def __str__(self):
             return self.name
-
+            
 class Review(models.Model):
     person_name = models.CharField(max_length=120, null=True, blank=True)
     jobpost = models.CharField(max_length=120, null=True, blank=True)

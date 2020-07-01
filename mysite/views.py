@@ -1,8 +1,9 @@
-from django.shortcuts import render, HttpResponse, HttpResponseRedirect
+from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirect
 from datetime import datetime
-from mysite.models import About, Contact, Review, Portfolio
+from .models import About, Review, Portfolio, Contact
 from django.contrib import messages
 from django.core.mail import send_mail
+
 
 def home(request):
     about =About.objects.all()

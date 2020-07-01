@@ -1,5 +1,5 @@
 from django.contrib import admin
-from mysite.models import About, Contact, Review, Portfolio
+from .models import About, Review, Portfolio, Contact
 
 # Register your models here.
 admin.site.register(About)
