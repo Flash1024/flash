@@ -1,11 +1,12 @@
 from django.shortcuts import render, HttpResponse, HttpResponseRedirect, redirect
 from datetime import datetime
-from .models import About, Review, Portfolio, Contact
+from .models import About, Review, Portfolio, Contact, ContactInfo
 from django.contrib import messages
 from django.core.mail import send_mail
 
 
 def home(request):
+    coninfo =ContactInfo.objects.all()
     about =About.objects.all()
     revw =Review.objects.all()
     port =Portfolio.objects.all()
@@ -31,4 +32,4 @@ def home(request):
             return HttpResponse("Thank You, Your Message has been sent!!!")
 
     else:
-        return render(request, 'home.html',{'about':about, 'port':port, 'revw':revw}) 
+        return render(request, 'home.html',{'about':about, 'port':port, 'revw':revw, 'coninfo':coninfo}) 
